@@ -5,6 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "nodemon server.js",
+    "prod-start": "./node_modules/.bin/pm2 start server.js",
     "lint": "eslint --max-warnings 3 ./",
     "test": "npm run lint && lab -c"
   },
@@ -27,6 +28,7 @@
     "inert": "^4.2.1",
     "joi": "^10.6.0",
     "lodash": "^4.17.4",
+    "pm2": "^2.9.3",
     "request": "^2.83.0",
     "vision": "^4.1.1"
   },
