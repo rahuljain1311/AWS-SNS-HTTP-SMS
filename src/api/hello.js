@@ -1,23 +1,16 @@
 'use strict';
 const Hello = require('../businessLogic/hello');
-const HelloSchema = require('../joiSchema/hello');
 
 module.exports = [
     {
-        method: 'GET',
-        path: '/hello/{id}',
+        method: 'POST',
+        path: '/hello',
         handler: ( request, reply ) => {
 
-            reply( Hello.print(request.params.id) );
+            reply( Hello.print(request.payload) );
         },
         config: {
-            tags: ['api'],
-            validate: {
-                params: HelloSchema.myHelloRequest
-            },
-            response: {
-                schema: HelloSchema.myHelloResponse
-            }
+            tags: ['api']
         }
     }
 ];

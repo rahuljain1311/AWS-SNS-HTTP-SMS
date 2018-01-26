@@ -1,6 +1,9 @@
 'use strict';
 
-exports.print = (id) => {
+exports.print = (payload) => {
 
-    return { name: 'Rj', id: id };
+    console.log('payload = ', payload);
+
+    payload = JSON.parse(JSON.stringify(payload));
+    console.log('JSON payload = ', payload);
 };
