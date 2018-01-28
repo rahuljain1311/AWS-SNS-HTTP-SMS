@@ -5,7 +5,8 @@ const _ = require('lodash');
 
 exports.print = (payload) => {
 
-    if(payload.type === 'SubscriptionConfirmation'){
+    payload = JSON.parse(payload);
+    if(payload.Type === 'SubscriptionConfirmation'){
         
         return new Promise((resolve, reject) => {
             const url = payload.SubscribeURL;
@@ -20,7 +21,7 @@ exports.print = (payload) => {
             });
         });
     }
-    else if(payload.type === 'Notification'){
+    else if(payload.Type === 'Notification'){
 
         console.log('payload = ', payload);
         if(_.toLower(payload.Message) === 'carla'){
